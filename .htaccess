@@ -59,6 +59,7 @@ DirectoryIndex index.php index.html index.htm
 
 # Various rewrite rules.
 <IfModule mod_rewrite.c>
+  RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
   RewriteEngine on
 
   # Set "protossl" to "s" if we were accessed via https://.  This is used later
